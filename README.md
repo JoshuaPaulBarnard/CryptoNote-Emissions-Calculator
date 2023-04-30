@@ -24,4 +24,4 @@ ________________________________________________________________________________
 
 
 **MIT License**
-Copyright (c) 2018 [Joshua Paul Barnard](https://joshuapaulbarnard.github.io/Interactive_Wine_Aroma_Wheel/LICENSE).
+Copyright (c) 2023 [Joshua Paul Barnard](https://mit-license.org/).
