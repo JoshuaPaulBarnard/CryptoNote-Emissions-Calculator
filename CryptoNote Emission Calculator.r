@@ -3,7 +3,7 @@
 ####    Author:  Joshua Paul Burnard   
 ####  
 ####    References:  CryptoNote Emission Calculator    
-####      https://cryptonotestarter.org/inner.html    
+####      https://cryptonotestarter.org/inner.html#emission    
 ####
 ####    Purpose:  To estimate the number of coins which will be mined from the 
 ####      beginning of a CryptoNote-based Coin.
