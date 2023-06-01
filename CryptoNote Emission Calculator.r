@@ -8,38 +8,39 @@
 ####    Purpose:  To estimate the number of coins which will be mined from the 
 ####      beginning of a CryptoNote-based Coin.
 ####  
-####    Inputs:   moneySupply - The total amount of coins to be mined.
-####              difficultyTarget - The ideal time period between blocks. In case an average time between blocks becomes less than difficulty target, difficulty increases. Difficulty target is measured in seconds.
-####              emissionSpeedFactor - There is a slight decrease of block reward each block, which defines emission curve slope. This parameter is required to calulate block reward.
-####              days - Is the number of days to estimate (starting from day 0).
+####    Inputs:   Money_Supply - The total amount of coins to be mined.
+####              Difficulty_Target - The ideal time period between blocks. In case an average time between blocks becomes less than difficulty target, difficulty increases. Difficulty target is measured in seconds.
+####              Emission_Speed_Factor - There is a slight decrease of block reward each block, which defines emission curve slope. This parameter is required to calulate block reward.
+####              Days - Is the number of Days to estimate (starting from day 0).
 ####  
 ####    Results:  amount_mined  - The total number of coins estimated to be mined.
 ####              percent_mined - The estimated percent of all coins mined.
 ################################################################################
 
 
-#############################################
-####   Input Parameters                  ####
-####                                     ####
-####    moneySupply must be an integer   ####
-####    difficultyTarget  is an integer  ####
-####    emissionSPeedFactor is integer   ####
-####    days is floating-point (numeric) ####
-#############################################
-moneySupply <- 18446744
-difficultyTarget <- 120
-emissionSpeedFactor <- 21
-days <- 365.25
+###############################################
+####   Input Parameters                    ####
+####                                       ####
+####    Money_Supply must be an integer    ####
+####    Difficulty_Target  is an integer   ####
+####    Emission_Speed_Factor is integer   ####
+####    Months is floating-point (numeric) ####
+###############################################
+Money_Supply <- 18446744
+Difficulty_Target <- 60
+Emission_Speed_Factor <- 22
+Months <- 13
 
 
 
 #############################################
-####   The equations                     ####
+####   The Equations                     ####
 ####    (Do Not Change)                  ####
 #############################################
-SpeedFactor <- 1 / (2 ^ emissionSpeedFactor)
-amount_mined <- moneySupply * ( (SpeedFactor - 1) * (1 - SpeedFactor) ^ (days * 86400 / difficultyTarget) + 1);
-percent_mined <- ( amount_mined * 100 ) / moneySupply
+Days <- 365.25 * ( Months / 12 )
+Speed_Factor <- 1 / (2 ^ Emission_Speed_Factor)
+amount_mined <- Money_Supply * ( (Speed_Factor - 1) * (1 - Speed_Factor) ^ (Days * 86400 / Difficulty_Target) + 1);
+percent_mined <- ( amount_mined * 100 ) / Money_Supply
 
 
 
