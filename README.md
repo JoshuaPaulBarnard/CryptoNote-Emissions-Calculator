@@ -1,5 +1,7 @@
 # CryptoNote Emissions Calculator 
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 **Purpose:**  
 To estimate the number of coins which will be mined from the beginning of a CryptoNote-based Coin.
 
