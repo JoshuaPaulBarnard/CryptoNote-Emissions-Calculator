@@ -3,7 +3,8 @@
 ####    Author:  Joshua Paul Burnard   
 ####  
 ####    References:  CryptoNote Emission Calculator    
-####      https://cryptonotestarter.org/inner.html#emission    
+####      https://cryptonotestarter.org/inner.html#emission   
+####      https://cryptonotestarter.org/js/tools.js
 ####
 ####    Purpose:  To estimate the number of coins which will be mined from the 
 ####      beginning of a CryptoNote-based Coin.
@@ -13,8 +14,10 @@
 ####              Emission_Speed_Factor - There is a slight decrease of block reward each block, which defines emission curve slope. This parameter is required to calulate block reward.
 ####              Days - Is the number of Days to estimate (starting from day 0).
 ####  
-####    Results:  amount_mined  - The total number of coins estimated to be mined.
-####              percent_mined - The estimated percent of all coins mined.
+####    Results:  amount_mined  -> The total number of coins estimated to be mined.
+####              percent_mined -> The estimated percent of all coins mined.
+####              Estimated_Blocks_Created -> The estimated number of blocks created.  
+####              Average_Block_Time -> The estimated time between the creation of each block (in minutes).
 ################################################################################
 
 
@@ -29,7 +32,7 @@
 Money_Supply <- 18446744
 Difficulty_Target <- 60
 Emission_Speed_Factor <- 22
-Months <- 13
+Months <- 12
 
 
 
@@ -42,6 +45,8 @@ Speed_Factor <- 1 / (2 ^ Emission_Speed_Factor)
 amount_mined <- Money_Supply * ( (Speed_Factor - 1) * (1 - Speed_Factor) ^ (Days * 86400 / Difficulty_Target) + 1);
 percent_mined <- ( amount_mined * 100 ) / Money_Supply
 Blocks_Per_Day <- ( 24 * 60 * 60 ) / Difficulty_Target
+Estimated_Blocks_Created <- Blocks_Per_Day * Days
+Average_Block_Time <- Difficulty_Target / 60
 
 
 #############################################
@@ -49,4 +54,5 @@ Blocks_Per_Day <- ( 24 * 60 * 60 ) / Difficulty_Target
 #############################################
 amount_mined
 percent_mined
-
+Estimated_Blocks_Created
+Average_Block_Time
