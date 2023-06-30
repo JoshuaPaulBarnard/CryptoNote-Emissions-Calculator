@@ -41,7 +41,7 @@ Days <- 365.25 * ( Months / 12 )
 Speed_Factor <- 1 / (2 ^ Emission_Speed_Factor)
 amount_mined <- Money_Supply * ( (Speed_Factor - 1) * (1 - Speed_Factor) ^ (Days * 86400 / Difficulty_Target) + 1);
 percent_mined <- ( amount_mined * 100 ) / Money_Supply
-
+Blocks_Per_Day <- ( 24 * 60 * 60 ) / Difficulty_Target
 
 
 #############################################
