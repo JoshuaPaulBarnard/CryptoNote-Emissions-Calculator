@@ -55,6 +55,7 @@ amount_mined              <- Premined_Amount + ( Money_Supply - Premined_Amount 
 percent_mined             <- ( amount_mined * 100 ) / Money_Supply
 Blocks_Per_Day            <- ( 24 * 60 * 60 ) / Difficulty_Target
 Estimated_Blocks_Created  <- Blocks_Per_Day * Days
+Average_Rewards_per_Block <- ( amount_mined - Premined_Amount ) / Estimated_Blocks_Created
 
 
 
@@ -64,3 +65,4 @@ Estimated_Blocks_Created  <- Blocks_Per_Day * Days
 amount_mined
 percent_mined
 Estimated_Blocks_Created
+Average_Rewards_per_Block
